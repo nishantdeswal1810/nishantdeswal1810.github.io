@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishant Deswal - Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Typed.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
+    <style>
+        .floating-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation (Previous code remains the same) -->
+    <nav>...</nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen relative bg-gradient-to-r from-blue-600 to-purple-600 overflow-hidden">
+        <div class="relative z-10 container mx-auto px-4 h-screen flex items-center">
+            <div class="text-white max-w-3xl">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                    Hi, I'm <span class="text-yellow-300">Nishant Deswal</span>
+                </h1>
+                
+                <div class="text-xl md:text-2xl mb-6 flex items-center gap-2">
+                    <span>I'm a</span>
+                    <span id="typed" class="text-blue-200"></span>
+                </div>
+                
+                <p class="text-lg md:text-xl mb-8 text-gray-200">
+                    Specializing in data engineering, machine learning, and Gen AI application development.
+                    Currently pursuing Masters in AI & ML at IIIT Lucknow.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" 
+                       class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all transform hover:scale-105">
+                        View Projects
+                    </a>
+                    <a href="#contact" 
+                       class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all transform hover:scale-105">
+                        Contact Me
+                    </a>
+                </div>
+
+                <div class="mt-8 flex space-x-4">
+                    <a href="https://github.com/nishantdeswal1810" target="_blank" 
+                       class="text-white hover:text-yellow-300 transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/nishantdeswal18" target="_blank" 
+                       class="text-white hover:text-yellow-300 transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Floating Icons -->
+            <div class="absolute right-10 top-1/2 transform -translate-y-1/2 hidden lg:block">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="floating-icon p-4 bg-white/10 backdrop-blur-sm rounded-lg">
+                        <i class="fas fa-code text-4xl text-white"></i>
+                    </div>
+                    <div class="floating-icon p-4 bg-white/10 backdrop-blur-sm rounded-lg" style="animation-delay: 0.2s;">
+                        <i class="fas fa-database text-4xl text-white"></i>
+                    </div>
+                    <div class="floating-icon p-4 bg-white/10 backdrop-blur-sm rounded-lg" style="animation-delay: 0.4s;">
+                        <i class="fas fa-brain text-4xl text-white"></i>
+                    </div>
+                    <div class="floating-icon p-4 bg-white/10 backdrop-blur-sm rounded-lg" style="animation-delay: 0.6s;">
+                        <i class="fas fa-robot text-4xl text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-white">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Previous JavaScript (menu toggle) remains the same
+
+        // Initialize Typed.js
+        new Typed('#typed', {
+            strings: [
+                'Python Developer',
+                'Data Engineer',
+                'ML Engineer',
+                'Gen AI Engineer',
+                'Data Analyst'
+            ],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 2000,
+            loop: true,
+            showCursor: true,
+            cursorChar: '|'
+        });
+    </script>
+</body>
+</html>
