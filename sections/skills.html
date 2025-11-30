@@ -1,116 +1,105 @@
-<section id="skills" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-4">
-        <!-- Title Section -->
-        <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">
-            Skills & Expertise
-        </h2>
+<section id="skills" class="py-20 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Skills & <span class="text-gradient">Expertise</span></h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
+        </div>
 
-        <!-- Skills Layout -->
-        <div class="relative max-w-6xl mx-auto">
-            <!-- Skills Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-8">
-                <!-- Development -->
-                <div class="space-y-4" data-aos="fade-up">
-                    <h4 class="font-semibold text-gray-700 mb-3">Development</h4>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag bg-blue-100 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition-all">
-                            Python
-                        </span>
-                        <span class="skill-tag bg-blue-100 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition-all">
-                            JavaScript
-                        </span>
-                        <span class="skill-tag bg-blue-100 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition-all">
-                            HTML/CSS
-                        </span>
-                        <span class="skill-tag bg-blue-100 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition-all">
-                            Django
-                        </span>
-                    </div>
-                </div>
+        <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+            <!-- Core Python & AI -->
+            <div class="skill-badge group">
+                <i class="fab fa-python text-yellow-400 mr-2"></i> Python
+            </div>
+            <div class="skill-badge group">
+                <i class="fas fa-brain text-neon-purple mr-2"></i> TensorFlow
+            </div>
+            <div class="skill-badge group">
+                <i class="fas fa-project-diagram text-red-500 mr-2"></i> Keras
+            </div>
+            <div class="skill-badge group">
+                <i class="fas fa-cogs text-orange-400 mr-2"></i> Scikit-learn
+            </div>
+            <div class="skill-badge group">
+                <i class="fas fa-robot text-neon-blue mr-2"></i> LLMs
+            </div>
+            <div class="skill-badge group">
+                <i class="fas fa-microchip text-green-400 mr-2"></i> Gen AI
+            </div>
 
-                <!-- AI & ML -->
-                <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
-                    <h4 class="font-semibold text-gray-700 mb-3">AI & Machine Learning</h4>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag bg-purple-100 text-purple-600 px-4 py-2 rounded-lg hover:bg-purple-600 hover:text-white transition-all">
-                            TensorFlow
-                        </span>
-                        <span class="skill-tag bg-purple-100 text-purple-600 px-4 py-2 rounded-lg hover:bg-purple-600 hover:text-white transition-all">
-                            Keras
-                        </span>
-                        <span class="skill-tag bg-purple-100 text-purple-600 px-4 py-2 rounded-lg hover:bg-purple-600 hover:text-white transition-all">
-                            Scikit-learn
-                        </span>
-                        <span class="skill-tag bg-purple-100 text-purple-600 px-4 py-2 rounded-lg hover:bg-purple-600 hover:text-white transition-all">
-                            LLMs
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Data Science -->
-                <div class="space-y-4" data-aos="fade-up" data-aos-delay="200">
-                    <h4 class="font-semibold text-gray-700 mb-3">Data Science</h4>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag bg-green-100 text-green-600 px-4 py-2 rounded-lg hover:bg-green-600 hover:text-white transition-all">
-                            Pandas
-                        </span>
-                        <span class="skill-tag bg-green-100 text-green-600 px-4 py-2 rounded-lg hover:bg-green-600 hover:text-white transition-all">
-                            NumPy
-                        </span>
-                        <span class="skill-tag bg-green-100 text-green-600 px-4 py-2 rounded-lg hover:bg-green-600 hover:text-white transition-all">
-                            Matplotlib
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Databases -->
-                <div class="space-y-4" data-aos="fade-up" data-aos-delay="300">
-                    <h4 class="font-semibold text-gray-700 mb-3">Databases</h4>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag bg-yellow-100 text-yellow-600 px-4 py-2 rounded-lg hover:bg-yellow-600 hover:text-white transition-all">
-                            MongoDB
-                        </span>
-                        <span class="skill-tag bg-yellow-100 text-yellow-600 px-4 py-2 rounded-lg hover:bg-yellow-600 hover:text-white transition-all">
-                            MySQL
-                        </span>
-                        <span class="skill-tag bg-yellow-100 text-yellow-600 px-4 py-2 rounded-lg hover:bg-yellow-600 hover:text-white transition-all">
-                            PostgreSQL
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Cloud & Tools -->
-                <div class="space-y-4" data-aos="fade-up" data-aos-delay="400">
-                    <h4 class="font-semibold text-gray-700 mb-3">Cloud & Tools</h4>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag bg-indigo-100 text-indigo-600 px-4 py-2 rounded-lg hover:bg-indigo-600 hover:text-white transition-all">
-                            AWS
-                        </span>
-                        <span class="skill-tag bg-indigo-100 text-indigo-600 px-4 py-2 rounded-lg hover:bg-indigo-600 hover:text-white transition-all">
-                            GCP
-                        </span>
-                        <span class="skill-tag bg-indigo-100 text-indigo-600 px-4 py-2 rounded-lg hover:bg-indigo-600 hover:text-white transition-all">
-                            Docker
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Web Tools -->
-                <div class="space-y-4" data-aos="fade-up" data-aos-delay="500">
-                    <h4 class="font-semibold text-gray-700 mb-3">Web Tools</h4>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag bg-red-100 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition-all">
-                            Selenium
-                        </span>
-                        <span class="skill-tag bg-red-100 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition-all">
-                            BeautifulSoup
-                        </span>
-                        <span class="skill-tag bg-red-100 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition-all">
-                            Playwright
-                        </span>
-                    </div>
-                </div>
+            <!-- Data Engineering & Web -->
+            <div class="skill-badge group">
+                <i class="fas fa-database text-green-500 mr-2"></i> MongoDB
+            </div>
+            <div class="skill-badge group">
+                <i class="fas fa-server text-blue-400 mr-2"></i> PostgreSQL
+            </div>
+            <div class="skill-badge group">
+                <i class="fas fa-table text-blue-600 mr-2"></i> MySQL
+            </div>
+            <div class="skill-badge group">
+                <i class="fab fa-aws text-orange-500 mr-2"></i> AWS
+            </div>
+            <div class="skill-badge group">
+                <i class="fab fa-google text-red-500 mr-2"></i> GCP
+            </div>
+            <div class="skill-badge group">
+                <i class="fab fa-docker text-blue-500 mr-2"></i> Docker
+            </div>
+            
+            <!-- Web Scraping & Frameworks -->
+            <div class="skill-badge group">
+                <i class="fas fa-spider text-gray-400 mr-2"></i> Selenium
+            </div>
+            <div class="skill-badge group">
+                <i class="fas fa-code text-yellow-600 mr-2"></i> BeautifulSoup
+            </div>
+            <div class="skill-badge group">
+                <i class="fas fa-play text-green-500 mr-2"></i> Playwright
+            </div>
+            <div class="skill-badge group">
+                <i class="fab fa-js text-yellow-300 mr-2"></i> JavaScript
+            </div>
+            <div class="skill-badge group">
+                <i class="fab fa-html5 text-orange-600 mr-2"></i> HTML/CSS
+            </div>
+            <div class="skill-badge group">
+                <i class="fas fa-cubes text-green-700 mr-2"></i> Django
+            </div>
+            
+            <!-- Data Analysis -->
+            <div class="skill-badge group">
+                <i class="fas fa-chart-bar text-blue-900 mr-2"></i> Pandas
+            </div>
+            <div class="skill-badge group">
+                <i class="fas fa-calculator text-blue-400 mr-2"></i> NumPy
+            </div>
+            <div class="skill-badge group">
+                <i class="fas fa-chart-line text-orange-400 mr-2"></i> Matplotlib
             </div>
         </div>
     </div>
+
+    <style>
+        .skill-badge {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 9999px;
+            color: #e2e8f0;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .skill-badge:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(6, 182, 212, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(6, 182, 212, 0.2);
+            color: white;
+        }
+    </style>
 </section>

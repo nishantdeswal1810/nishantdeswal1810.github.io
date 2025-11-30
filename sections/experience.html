@@ -1,65 +1,101 @@
-<section id="experience" class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Professional Experience</h2>
+<section id="experience" class="py-20 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Professional <span class="text-gradient">Experience</span></h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
+        </div>
         
         <!-- Timeline Container -->
         <div class="relative max-w-4xl mx-auto">
             <!-- Timeline Line -->
-            <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-blue-200"></div>
+            <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-neon-blue via-neon-purple to-neon-pink opacity-30"></div>
             
             <!-- Data Engineer at Ambitio -->
-            <div class="relative mb-16" data-aos="fade-up">
-                <div class="md:flex items-center">
+            <div class="relative mb-20 group">
+                <div class="md:flex items-center justify-between w-full">
                     <!-- Timeline Dot -->
-                    <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full"></div>
+                    <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-dark-bg border-2 border-neon-blue rounded-full z-10 group-hover:scale-125 group-hover:bg-neon-blue transition-all duration-300 shadow-[0_0_10px_rgba(6,182,212,0.5)]"></div>
                     
                     <!-- Content -->
-                    <div class="ml-8 md:ml-0 md:w-1/2 md:pr-8 md:text-right">
-                        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                            <h3 class="text-xl font-bold text-gray-800">Data Engineer</h3>
-                            <p class="text-blue-600 font-semibold">Ambitio</p>
-                            <p class="text-gray-600 mb-4">Oct 2024 - Present</p>
-                            <ul class="text-gray-600 space-y-2 list-disc list-inside">
-                                <li>Engineered data collection pipelines using Playwright for a student profile builder</li>
-                                <li>Leveraged OpenAI to develop automated scraping solutions for CourseFinder</li>
-                                <li>Streamlined data extraction processes to handle varying website structures</li>
+                    <div class="ml-8 md:ml-0 md:w-[45%] md:pr-8 md:text-right order-1">
+                        <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-white/5 hover:border-neon-blue/30 group-hover:-translate-y-2 relative overflow-hidden">
+                            <!-- Decorative gradient -->
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-neon-blue/5 rounded-full blur-2xl -mr-16 -mt-16"></div>
+                            
+                            <h3 class="text-2xl font-bold text-white mb-1">Data Engineer</h3>
+                            <p class="text-neon-blue font-semibold text-lg mb-2">Ambitio</p>
+                            <p class="text-gray-400 text-sm mb-6 flex items-center md:justify-end gap-2">
+                                <i class="far fa-calendar-alt"></i> Oct 2024 - Present
+                            </p>
+                            
+                            <ul class="text-gray-300 space-y-3 text-sm leading-relaxed md:ml-auto md:text-right list-none">
+                                <li class="hover:text-white transition-colors">
+                                    <span class="font-semibold text-neon-blue">RAG Enhancement:</span> Finetuned <code class="bg-white/10 px-1 rounded text-xs">nomic-embed-text</code> model to improve similarity search by <span class="text-neon-blue font-bold">56%</span>.
+                                </li>
+                                <li class="hover:text-white transition-colors">
+                                    <span class="font-semibold text-neon-blue">RLHF Model:</span> Trained a neural network to predict and shortlist applications, boosting conversion rates.
+                                </li>
+                                <li class="hover:text-white transition-colors">
+                                    <span class="font-semibold text-neon-blue">ETL Pipelines:</span> Architected scalable pipelines processing <span class="text-white font-bold">40,000+</span> records quarterly.
+                                </li>
+                                <li class="hover:text-white transition-colors">
+                                    <span class="font-semibold text-neon-blue">AI Sales Audit:</span> Automated call analysis and trend insights system.
+                                </li>
+                                <li class="hover:text-white transition-colors">
+                                    <span class="font-semibold text-neon-blue">Doc Eval Tool:</span> Built AI tool for SOPs and LORs, providing instant feedback.
+                                </li>
                             </ul>
-                            <div class="mt-4 flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded text-sm">Playwright</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded text-sm">OpenAI</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded text-sm">Python</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded text-sm">EC2</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded text-sm">Postgresql</span>
+
+                            <div class="mt-6 flex flex-wrap gap-2 md:justify-end">
+                                <span class="px-3 py-1 bg-neon-blue/10 text-neon-blue rounded-full text-xs border border-neon-blue/20 hover:bg-neon-blue hover:text-white transition-colors cursor-default">OpenAI</span>
+                                <span class="px-3 py-1 bg-neon-blue/10 text-neon-blue rounded-full text-xs border border-neon-blue/20 hover:bg-neon-blue hover:text-white transition-colors cursor-default">RAG</span>
+                                <span class="px-3 py-1 bg-neon-blue/10 text-neon-blue rounded-full text-xs border border-neon-blue/20 hover:bg-neon-blue hover:text-white transition-colors cursor-default">RLHF</span>
+                                <span class="px-3 py-1 bg-neon-blue/10 text-neon-blue rounded-full text-xs border border-neon-blue/20 hover:bg-neon-blue hover:text-white transition-colors cursor-default">Playwright</span>
                             </div>
                         </div>
                     </div>
+                    <div class="hidden md:block md:w-[45%] order-2"></div>
                 </div>
             </div>
 
             <!-- Python Developer at Propques -->
-            <div class="relative mb-16" data-aos="fade-up">
-                <div class="md:flex items-center">
+            <div class="relative mb-16 group">
+                <div class="md:flex items-center justify-between w-full">
                     <!-- Timeline Dot -->
-                    <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full"></div>
+                    <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-dark-bg border-2 border-neon-purple rounded-full z-10 group-hover:scale-125 group-hover:bg-neon-purple transition-all duration-300 shadow-[0_0_10px_rgba(139,92,246,0.5)]"></div>
                     
                     <!-- Content -->
-                    <div class="ml-8 md:ml-auto md:w-1/2 md:pl-8">
-                        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                            <h3 class="text-xl font-bold text-gray-800">Python Developer</h3>
-                            <p class="text-blue-600 font-semibold">Propques</p>
-                            <p class="text-gray-600 mb-4">April 2024 - Sep 2024</p>
-                            <ul class="text-gray-600 space-y-2 list-disc list-inside">
-                                <li>Developed custom data extraction scripts using Beautiful Soup and Selenium</li>
-                                <li>Built a property recommendation chatbot with Dialogflow</li>
-                                <li>Managed a noSQL database with over 10,000 records</li>
-                                <li>Led migration from GCP to DigitalOcean, cutting costs by 90%</li>
+                    <div class="hidden md:block md:w-[45%] order-1"></div>
+                    <div class="ml-8 md:ml-0 md:w-[45%] md:pl-8 order-2">
+                        <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-white/5 hover:border-neon-purple/30 group-hover:-translate-y-2 relative overflow-hidden">
+                            <!-- Decorative gradient -->
+                            <div class="absolute top-0 left-0 w-32 h-32 bg-neon-purple/5 rounded-full blur-2xl -ml-16 -mt-16"></div>
+
+                            <h3 class="text-2xl font-bold text-white mb-1">Python Developer</h3>
+                            <p class="text-neon-purple font-semibold text-lg mb-2">Propques</p>
+                            <p class="text-gray-400 text-sm mb-6 flex items-center gap-2">
+                                <i class="far fa-calendar-alt"></i> April 2024 - Sep 2024
+                            </p>
+                            
+                            <ul class="text-gray-300 space-y-3 text-sm leading-relaxed list-none">
+                                <li class="hover:text-white transition-colors">
+                                    <span class="font-semibold text-neon-purple">Data Extraction:</span> Engineered 30+ scripts with Selenium/Playwright.
+                                </li>
+                                <li class="hover:text-white transition-colors">
+                                    <span class="font-semibold text-neon-purple">Chatbot:</span> Built property recommendation bot with Dialogflow.
+                                </li>
+                                <li class="hover:text-white transition-colors">
+                                    <span class="font-semibold text-neon-purple">Database:</span> Managed NoSQL DB with <span class="text-white font-bold">10,000+</span> records.
+                                </li>
+                                <li class="hover:text-white transition-colors">
+                                    <span class="font-semibold text-neon-purple">Cloud Migration:</span> Migrated GCP to DigitalOcean, cutting costs by <span class="text-white font-bold">90%</span>.
+                                </li>
                             </ul>
-                            <div class="mt-4 flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded text-sm">Python</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded text-sm">Flask</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded text-sm">MongoDB</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded text-sm">GCP</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded text-sm">Digitalocean</span>
+
+                            <div class="mt-6 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-neon-purple/10 text-neon-purple rounded-full text-xs border border-neon-purple/20 hover:bg-neon-purple hover:text-white transition-colors cursor-default">Python</span>
+                                <span class="px-3 py-1 bg-neon-purple/10 text-neon-purple rounded-full text-xs border border-neon-purple/20 hover:bg-neon-purple hover:text-white transition-colors cursor-default">Flask</span>
+                                <span class="px-3 py-1 bg-neon-purple/10 text-neon-purple rounded-full text-xs border border-neon-purple/20 hover:bg-neon-purple hover:text-white transition-colors cursor-default">MongoDB</span>
                             </div>
                         </div>
                     </div>

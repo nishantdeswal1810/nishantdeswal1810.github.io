@@ -1,74 +1,264 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nishant Deswal - Portfolio</title>
+    <title>Nishant Deswal | Data Engineer & AI Specialist</title>
+    
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            bg: '#0f172a',
+                            card: '#1e293b',
+                            text: '#f8fafc'
+                        },
+                        neon: {
+                            blue: '#06b6d4',
+                            purple: '#8b5cf6',
+                            pink: '#ec4899'
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Typed.js for hero section -->
+    <!-- Typed.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
 
     <style>
-        /* Animations for icons */
-        .floating-icon {
-            animation: float 3s ease-in-out infinite;
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
         
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #06b6d4, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .text-gradient-blue {
+            background: linear-gradient(to right, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Custom Cursor Styles */
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #06b6d4;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s, width 0.3s, height 0.3s;
+            mix-blend-mode: difference;
+        }
+
+        .custom-cursor-dot {
+            width: 4px;
+            height: 4px;
+            background-color: #ec4899;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+        }
+
+        .custom-cursor.hover {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(6, 182, 212, 0.1);
+            border-color: transparent;
+        }
+
+        .custom-cursor.expand {
+            transform: translate(-50%, -50%) scale(0.8);
+        }
+
+        /* Confetti Styles */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            pointer-events: none;
+            animation: confetti-fall 1s ease-out forwards;
+            z-index: 9998;
+        }
+
+        @keyframes confetti-fall {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)) rotate(720deg); opacity: 0; }
+        }
+
+        /* Spotlight Effect (Bat-Signal) */
+        .glass-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                800px circle at var(--mouse-x) var(--mouse-y),
+                rgba(255, 215, 0, 0.15), /* Gold/Yellow for Bat-Signal */
+                transparent 40%
+            );
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .glass-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Smooth Transitions for Magnetic Effect */
+        a.rounded-full, button {
+            transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.3s, box-shadow 0.3s;
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="antialiased selection:bg-neon-purple selection:text-white cursor-none">
+    
+    <!-- Background Effects -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-neon-blue/20 rounded-full mix-blend-screen filter blur-[100px] opacity-30 animate-blob"></div>
+        <div class="absolute top-0 right-1/4 w-96 h-96 bg-neon-purple/20 rounded-full mix-blend-screen filter blur-[100px] opacity-30 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-32 left-1/3 w-96 h-96 bg-neon-pink/20 rounded-full mix-blend-screen filter blur-[100px] opacity-30 animate-blob animation-delay-4000"></div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white/80 backdrop-blur-sm z-40 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex items-center justify-between h-16">
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
-                <a href="#" class="text-2xl font-bold">
-                    Nishant<span class="text-blue-600">.</span>
+                <a href="#" class="text-2xl font-bold tracking-tighter group">
+                    Nishant<span class="text-neon-blue group-hover:text-neon-purple transition-colors">.</span>
                 </a>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
-                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
-                    <a href="#experience" class="text-gray-600 hover:text-blue-600 transition-colors">Experience</a>
-                    <a href="#projects" class="text-gray-600 hover:text-blue-600 transition-colors">Projects</a>
-                    <a href="#skills" class="text-gray-600 hover:text-blue-600 transition-colors">Skills</a>
-                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-gray-300 hover:text-white transition-colors hover:scale-105 transform duration-200">About</a>
+                    <a href="#experience" class="text-sm font-medium text-gray-300 hover:text-white transition-colors hover:scale-105 transform duration-200">Experience</a>
+                    <a href="#projects" class="text-sm font-medium text-gray-300 hover:text-white transition-colors hover:scale-105 transform duration-200">Projects</a>
+                    <a href="#skills" class="text-sm font-medium text-gray-300 hover:text-white transition-colors hover:scale-105 transform duration-200">Skills</a>
+                    <a href="#contact" class="text-sm font-medium text-gray-300 hover:text-white transition-colors hover:scale-105 transform duration-200">Contact</a>
+                    <a href="files/resume.pdf" 
+                       target="_blank"
+                       class="px-5 py-2.5 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple text-white text-sm font-semibold shadow-lg shadow-neon-blue/20 hover:shadow-neon-purple/40 hover:scale-105 transition-all duration-300">
+                        Resume
+                    </a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden text-gray-600 hover:text-blue-600" onclick="toggleMenu()">
+                <button class="md:hidden text-gray-300 hover:text-white focus:outline-none" onclick="toggleMenu()">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
             
             <!-- Mobile Menu -->
-            <div id="mobileMenu" class="hidden md:hidden">
-                <div class="py-2 space-y-2">
-                    <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg">Home</a>
-                    <a href="#about" class="block px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg">About</a>
-                    <a href="#experience" class="block px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg">Experience</a>
-                    <a href="#projects" class="block px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg">Projects</a>
-                    <a href="#skills" class="block px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg">Skills</a>
-                    <a href="#contact" class="block px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg">Contact</a>
+            <div id="mobileMenu" class="hidden md:hidden glass-card mt-2 rounded-2xl p-4 absolute left-4 right-4 top-20 border-t border-white/10">
+                <div class="flex flex-col space-y-3">
+                    <a href="#about" class="block px-4 py-2 text-gray-300 hover:bg-white/5 rounded-lg hover:text-white transition-colors">About</a>
+                    <a href="#experience" class="block px-4 py-2 text-gray-300 hover:bg-white/5 rounded-lg hover:text-white transition-colors">Experience</a>
+                    <a href="#projects" class="block px-4 py-2 text-gray-300 hover:bg-white/5 rounded-lg hover:text-white transition-colors">Projects</a>
+                    <a href="#skills" class="block px-4 py-2 text-gray-300 hover:bg-white/5 rounded-lg hover:text-white transition-colors">Skills</a>
+                    <a href="#contact" class="block px-4 py-2 text-gray-300 hover:bg-white/5 rounded-lg hover:text-white transition-colors">Contact</a>
+                    <a href="files/resume.pdf" target="_blank" class="block px-4 py-2 text-center text-white bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg font-medium">
+                        Download Resume
+                    </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Main content container -->
-    <main>
+    <!-- Main Content -->
+    <main class="relative z-10">
         <div id="hero-section"></div>
         <div id="about-section"></div>
         <div id="experience-section"></div>
@@ -77,59 +267,71 @@
         <div id="contact-section"></div>
     </main>
 
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-500 text-sm glass border-t border-white/5">
+        <p>&copy; 2024 Nishant Deswal. Built with <i class="fas fa-heart text-neon-pink mx-1"></i> and AI.</p>
+    </footer>
+
+    <!-- Interactions Script -->
+    <script src="js/interactions.js"></script>
+
     <script>
-        // Your existing menu toggle code
+        // Mobile Menu Toggle
         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('hidden');
         }
 
+        // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
             const menu = document.getElementById('mobileMenu');
-            const menuButton = document.querySelector('button');
+            const menuButton = document.querySelector('button[onclick="toggleMenu()"]');
             
-            if (!menuButton.contains(e.target) && !menu.contains(e.target)) {
+            if (menu && !menu.classList.contains('hidden') && !menu.contains(e.target) && !menuButton.contains(e.target)) {
                 menu.classList.add('hidden');
             }
         });
 
-        // Section loading function
+        // Section Loading
         async function loadSection(sectionName) {
             try {
-                const response = await fetch(`sections/${sectionName}.html`);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
+                const response = await fetch(`./sections/${sectionName}.html`);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 const html = await response.text();
                 const container = document.getElementById(`${sectionName}-section`);
                 if (container) {
                     container.innerHTML = html;
-                }
-
-                // Initialize Typed.js if hero section is loaded
-                if (sectionName === 'hero' && window.Typed) {
-                    new Typed('#typed', {
-                        strings: [
-                            'Python Developer',
-                            'Data Engineer',
-                            'ML Engineer',
-                            'Gen AI Engineer',
-                            'Data Analyst'
-                        ],
-                        typeSpeed: 50,
-                        backSpeed: 30,
-                        backDelay: 2000,
-                        loop: true,
-                        showCursor: true,
-                        cursorChar: '|'
-                    });
+                    
+                    // Re-initialize scripts if needed
+                    if (sectionName === 'hero') {
+                        initTyped();
+                    }
                 }
             } catch (error) {
                 console.error(`Error loading ${sectionName} section:`, error);
             }
         }
 
-        // Load all sections when document is ready
+        function initTyped() {
+            if (document.getElementById('typed')) {
+                new Typed('#typed', {
+                    strings: [
+                        'Data Engineer',
+                        'AI Specialist',
+                        'ML Engineer',
+                        'Python Developer'
+                    ],
+                    typeSpeed: 50,
+                    backSpeed: 30,
+                    backDelay: 2000,
+                    loop: true,
+                    showCursor: true,
+                    cursorChar: '|'
+                });
+            }
+        }
+
+        // Load all sections
         document.addEventListener('DOMContentLoaded', () => {
             const sections = ['hero', 'about', 'experience', 'projects', 'skills', 'contact'];
             sections.forEach(section => loadSection(section));
